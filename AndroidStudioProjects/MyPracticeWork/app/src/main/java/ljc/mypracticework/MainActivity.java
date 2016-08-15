@@ -3,6 +3,7 @@ package ljc.mypracticework;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import java.util.ArrayList;
@@ -10,6 +11,7 @@ import java.util.List;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import ljc.mypracticework.adapter.MainActivityRecyclerViewAdapter;
 import ljc.mypracticework.model.PracticeInfo;
 
 public class MainActivity extends AppCompatActivity {
@@ -20,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
     SwipeRefreshLayout mSwipeLayout;
     private List<PracticeInfo> mList;
     private int mDrawableId = R.mipmap.ic_launcher;
+    MainActivityRecyclerViewAdapter mAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,15 +36,20 @@ public class MainActivity extends AppCompatActivity {
                 getData();
             }
         });
+        mList = new ArrayList<>();
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        mAdapter = new MainActivityRecyclerViewAdapter(this,mList);
+        mRecyclerView.setAdapter(mAdapter);
+        getData();
     }
 
     private void getData() {
         /**
-         * 添加已知的知识点
+         * 添加已知的实践
          */
         addPracticedPracticeInfo();
         /**
-         * 添加未知的知识点
+         * 添加未知的实践
          */
         for(int i = 0;i < 10;i++){
             String mTitle = "未知标题";
