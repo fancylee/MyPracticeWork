@@ -7,14 +7,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
+        android:gravity="center_vertical"
         >
         <ProgressBar
             android:id="@+id/item_recyclerviewfooter_progressbar"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
             style="?android:attr/progressBarStyleSmall"
         />
         <TextView
+            android:layout_marginLeft="5dp"
             android:id="@+id/item_recyclerviewfooter_tv"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
