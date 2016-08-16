@@ -67,6 +67,7 @@ public class RecyclerviewSwipeFragmentAdapter extends RecyclerView.Adapter<Recyc
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         if(holder instanceof NormalViewHolder){
 
+            ((NormalViewHolder) holder).mTvDes.setText("第"+position+"个item");
         }else if(holder instanceof  FooterViewHolder){
             if(mNoMore){
                 ((FooterViewHolder) holder).mProgressBar.setVisibility(View.GONE);
@@ -106,7 +107,8 @@ public class RecyclerviewSwipeFragmentAdapter extends RecyclerView.Adapter<Recyc
 
 
     static class NormalViewHolder extends RecyclerView.ViewHolder{
-
+        @Bind(R.id.item_recyclerviewswipefragment_recyclerview_tv)
+        TextView mTvDes;
         public NormalViewHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);

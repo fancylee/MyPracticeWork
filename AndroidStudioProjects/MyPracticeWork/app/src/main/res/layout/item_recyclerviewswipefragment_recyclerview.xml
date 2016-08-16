@@ -3,15 +3,17 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="90dp"
-    app:cardElevation="4dp"
-    app:cardCornerRadius="4dp"
+    android:layout_height="50dp"
+    app:cardElevation="3dp"
+    app:cardCornerRadius="3dp"
     android:layout_margin="8dp"
     >
     <TextView
+        android:id="@+id/item_recyclerviewswipefragment_recyclerview_tv"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
-        android:text=""
+        android:text="第一个item"
+        android:textSize="18sp"
         />
 </android.support.v7.widget.CardView>

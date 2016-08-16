@@ -1,6 +1,7 @@
 package ljc.mypracticework.adapter;
 
 import android.content.Context;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +13,7 @@ import java.util.List;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import ljc.mypracticework.R;
+import ljc.mypracticework.SelectedActivity;
 import ljc.mypracticework.model.PracticeInfo;
 
 /**
@@ -63,7 +65,7 @@ public class MainActivityRecyclerViewAdapter  extends RecyclerView.Adapter<Recyc
     }
 
     @Override
-    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+    public void onBindViewHolder(RecyclerView.ViewHolder holder, final int position) {
 
         if(holder instanceof NormalViewHolder){
             PracticeInfo mInfo = mList.get(position);
@@ -71,6 +73,12 @@ public class MainActivityRecyclerViewAdapter  extends RecyclerView.Adapter<Recyc
             ((NormalViewHolder) holder).mTvDes.setText(mInfo.mInfoDes);
             ((NormalViewHolder) holder).mTvTitle.setText(mInfo.mInfoTitle);
             ((NormalViewHolder) holder).mTvTime.setText(mInfo.mTimeTag);
+            ((NormalViewHolder) holder).mCardView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    SelectedActivity.mSelectedActivityStart(mContext,position);
+                }
+            });
         }else if(holder instanceof  FooterViewHolder){
             if(mNoMore){
                 ((FooterViewHolder) holder).mProgressBar.setVisibility(View.GONE);
@@ -94,7 +102,8 @@ public class MainActivityRecyclerViewAdapter  extends RecyclerView.Adapter<Recyc
     }
 
     static  class NormalViewHolder extends RecyclerView.ViewHolder{
-
+        @Bind(R.id.item_activitymain_cardview)
+        CardView mCardView;
         @Bind(R.id.item_activitymain_recyclerview_iv)
         ImageView mIvDes;
         @Bind(R.id.item_activitymain_recyclerview_tv_title)
