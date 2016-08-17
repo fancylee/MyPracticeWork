@@ -8,6 +8,7 @@ import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -71,6 +72,15 @@ public class RecyclerviewSwipeFragment extends Fragment {
 
             }
         });
+        mRecyclerView.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if(mSwipeLayout.isRefreshing()){
+                    return  true;
+                }
+                return false;
+            }
+        });
         mLayoutManager = new LinearLayoutManager(getActivity());
         mRecyclerView.setLayoutManager(mLayoutManager);
         mRecyclerView.setAdapter(mAdapter);
@@ -86,8 +96,11 @@ public class RecyclerviewSwipeFragment extends Fragment {
                 super.onScrolled(recyclerView, dx, dy);
                 int lastVisibleItemPosition = mLayoutManager.findLastVisibleItemPosition();
                 if(lastVisibleItemPosition == mAdapter.getItemCount() -1){
-                    if(mPage == 5){
+                    if(mPage >= 5){
                         mAdapter.setmNoMore(true);
+                        return;
+                    }else{
+                        mAdapter.setmNoMore(false);
                     }
                     if(mSwipeLayout.isRefreshing()){
                         mAdapter.notifyItemRemoved(mAdapter.getItemCount());

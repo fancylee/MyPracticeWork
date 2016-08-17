@@ -7,4 +7,13 @@
 2，RecyclerView的上拉到最后一个时实现加载更多的操作。  
 3，RecyclerView实现不同的ViewHolder。  
 4，实现没有更多数据的提示。  
-具体效果可参看ZEALER android客服端。这是一个成熟的实践。  
+具体效果可参看ZEALER android客户端。这是一个成熟的实践。  
+[视频效果](https://www.youtube.com/watch?v=KnFqYPlmd1Y&feature=youtu.be) 
+
+<iframe height=200 width=200 src="https://www.youtube.com/watch?v=KnFqYPlmd1Y&feature=youtu.be" frameborder=1 allowfullscreen></iframe> 
+
+	
+<embed src="http://player.youku.com/player.php/sid/XNzQxMjU2ODI0/v.swf" allowFullScreen="true" quality="high" width="480" height="400" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash"></embed>
+
+
+ 

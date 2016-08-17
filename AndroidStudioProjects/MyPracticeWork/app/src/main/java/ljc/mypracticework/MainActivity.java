@@ -69,8 +69,11 @@ public class MainActivity extends AppCompatActivity {
                 super.onScrolled(recyclerView, dx, dy);
                 int lastVisibleItemPosition = mLayoutManager.findLastVisibleItemPosition();
                 if(lastVisibleItemPosition == mAdapter.getItemCount() -1){
-                    if(mPage == 5){
+                    if(mPage >= 5){
                         mAdapter.setmNoMore(true);
+                        return;
+                    }else{
+                        mAdapter.setmNoMore(false);
                     }
                     if(mSwipeLayout.isRefreshing()){
                         mAdapter.notifyItemRemoved(mAdapter.getItemCount());
