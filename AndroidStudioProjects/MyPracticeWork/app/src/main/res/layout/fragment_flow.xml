@@ -2,12 +2,14 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="15dp"
+    android:padding="5dp"
     >
     <ljc.mypracticework.view.FlowLayout
+        android:id="@+id/fragment_flow_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <EditText
+            android:id="@+id/fragment_flow_et"
             android:imeOptions="actionDone"
             android:gravity="center"
             android:padding="5dp"
@@ -15,10 +17,14 @@
             android:textColorHint="@color/zhu_yellow"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
+            android:textSize="16sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/tagbackground"
+            android:inputType="text"
+            android:singleLine="true"
+            android:layout_marginBottom="3dp"
+            android:layout_marginTop="3dp"
             />
-
     </ljc.mypracticework.view.FlowLayout>
 </LinearLayout>
