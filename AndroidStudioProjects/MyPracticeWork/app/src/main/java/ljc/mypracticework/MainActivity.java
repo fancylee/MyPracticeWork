@@ -6,6 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.MotionEvent;
+import android.view.View;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -57,7 +59,15 @@ public class MainActivity extends AppCompatActivity {
         mRecyclerView.setLayoutManager(mLayoutManager);
         mAdapter = new MainActivityRecyclerViewAdapter(this,mList);
         mRecyclerView.setAdapter(mAdapter);
-
+        mRecyclerView.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if(mSwipeLayout.isRefreshing()){
+                    return true;
+                }
+                return false;
+            }
+        });
         mRecyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
             public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
@@ -138,6 +148,16 @@ public class MainActivity extends AppCompatActivity {
         String mTimeTag = "08/15";
         PracticeInfo mPracticeInfo_15_AUG = new PracticeInfo(mPracticeInfo_15_AUG_title,mPracticeInfo_15_AUG_DES, R.mipmap.ic_launcher,mTimeTag);
         mList.add(mPracticeInfo_15_AUG);
+        /**
+         * 第二个Demo
+         * title:流式布局下的标签的添加和删除
+         * des:增加对自定义Viewgroup的认识，更深一步的了解ViewGroup中onmeasure和onlayout函数。
+         */
+        String mPracticeInfo_21_AUG_title = "流式布局下的标签的添加和删除";
+        String mPracticeInfo_21_AUG_des   ="增加对自定义Viewgroup的认识，更深一步的了解ViewGroup中onmeasure和onlayout函数";
+        String mPracticeInfo_21_AUG_mTimeTag = "08/21";
+        PracticeInfo mPracticeInfo_21_AUG = new PracticeInfo(mPracticeInfo_21_AUG_title,mPracticeInfo_21_AUG_des, R.mipmap.ic_launcher,mPracticeInfo_21_AUG_mTimeTag);
+        mList.add(mPracticeInfo_21_AUG);
     }
 
     @Override

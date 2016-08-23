@@ -10,10 +10,9 @@
 具体效果可参看ZEALER android客户端。这是一个成熟的实践。  
 [视频效果](https://www.youtube.com/watch?v=KnFqYPlmd1Y&feature=youtu.be) 
 
-<iframe height=200 width=200 src="https://www.youtube.com/watch?v=KnFqYPlmd1Y&feature=youtu.be" frameborder=1 allowfullscreen></iframe> 
+##第二个项目是基于流式布局来实现标签的添加和删除。
+这个项目可以增加对自定义Viewgroup的认识，更深一步的了解ViewGroup中onmeasure和onlayout函数。
 
-	
-<embed src="http://player.youku.com/player.php/sid/XNzQxMjU2ODI0/v.swf" allowFullScreen="true" quality="high" width="480" height="400" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash"></embed>
 
 
  

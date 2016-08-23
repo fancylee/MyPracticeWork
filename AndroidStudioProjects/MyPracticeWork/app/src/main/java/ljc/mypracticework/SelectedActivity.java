@@ -9,6 +9,7 @@ import android.widget.FrameLayout;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import ljc.mypracticework.fragment.FlowLayoutFragment;
 import ljc.mypracticework.fragment.RecyclerviewSwipeFragment;
 
 /**
@@ -41,6 +42,9 @@ public class SelectedActivity extends AppCompatActivity {
         switch (i){
             case 0:
                 mFragment = RecyclerviewSwipeFragment.newInstance();
+                break;
+            case 1:
+                mFragment = FlowLayoutFragment.newInstance();
                 break;
         }
 

@@ -4,4 +4,7 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#3F51B5</color>
     <color name="colorWhite">#ffffff</color>
+    <color name = "zhu_yellow">#ffcc00</color>
+    <color name="zhu_orange">#F54D27</color>
+    <color name="zhu_grey">#686868</color>
 </resources>

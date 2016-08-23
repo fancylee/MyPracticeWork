@@ -3,6 +3,7 @@ package ljc.mypracticework.adapter;
 import android.content.Context;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -68,7 +69,7 @@ public class MainActivityRecyclerViewAdapter  extends RecyclerView.Adapter<Recyc
     public void onBindViewHolder(RecyclerView.ViewHolder holder, final int position) {
 
         if(holder instanceof NormalViewHolder){
-            PracticeInfo mInfo = mList.get(position);
+            final PracticeInfo mInfo = mList.get(position);
             ((NormalViewHolder) holder).mIvDes.setImageResource(mInfo.mDrawableId);
             ((NormalViewHolder) holder).mTvDes.setText(mInfo.mInfoDes);
             ((NormalViewHolder) holder).mTvTitle.setText(mInfo.mInfoTitle);
@@ -76,7 +77,10 @@ public class MainActivityRecyclerViewAdapter  extends RecyclerView.Adapter<Recyc
             ((NormalViewHolder) holder).mCardView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    SelectedActivity.mSelectedActivityStart(mContext,position);
+                    if(!mInfo.mInfoTitle.equals("未知标题")){
+                        SelectedActivity.mSelectedActivityStart(mContext,position);
+                    }
+
                 }
             });
         }else if(holder instanceof  FooterViewHolder){

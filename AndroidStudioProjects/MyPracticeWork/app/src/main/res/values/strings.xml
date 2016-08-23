@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">MyPracticeWork</string>
+    <string name="add_tags">添加标签</string>
+    <string name="add_repeat">该标签已经被添加，请勿重复添加</string>
+    <string name="delete_tags">删除</string>
+    <string name="reback">取消</string>
 </resources>
