@@ -27,4 +27,16 @@
             android:layout_marginTop="3dp"
             />
     </ljc.mypracticework.view.FlowLayout>
+    <View
+        android:layout_marginTop="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/zhu_yellow"
+        />
+    <ljc.mypracticework.view.FlowLayout
+        android:id="@+id/fragment_flow_container1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </ljc.mypracticework.view.FlowLayout>
 </LinearLayout>
